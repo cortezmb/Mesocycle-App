@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "bzzbgare",
+    "password": "PDQZPdP-3YkOaX0xCGpcdzrBUDBgzixF",
+    "database": "bzzbgare",
+    "host": "otto.db.elephantsql.com",
+    "dialect": "postgres"
+  }
+}

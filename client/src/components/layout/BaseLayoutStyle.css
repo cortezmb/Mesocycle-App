@@ -1,0 +1,107 @@
+body {
+    margin: 0px;
+    background-color: #FFFFFF;
+  }
+
+.headerImage {
+    background: url('../images/MESOCYCLE LOGO_black_bcg.png');
+    width: 25em;
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.header{
+    height: 30vh;
+    background-color: black;
+  }
+
+.mainBody {
+    height: 60vh;
+}
+
+label{
+    color: #ee2d37;
+    font-family: 'Amatic SC';
+    font-size: 5vw;
+    font-weight: bold;
+}
+
+.navBG{
+    background: #ee2d37;
+    height: 10vh;
+}
+
+.iconColor {
+    color: #FFFFFF;
+}
+
+.navFontSize {
+    font-size: small;
+}
+
+.dropDownMenu {
+    display: block;
+}
+
+.select {
+    padding: 8px 12px;
+    color: black;
+    /* background-color: lightgray; */
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    font-size: 2vh;
+}
+
+.submit {
+    padding: 8px 12px;
+    color: black;
+    /* background-color: lightgray; */
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    font-size: 2vh;
+}
+
+.category {
+    font-size: 2vh;
+    padding: 5px;
+}
+
+.continueButton {
+    background-color: #ee2d37;
+    color: #FFFFFF;
+    border: 1px solid #ee2d37;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 2vh;
+}
+
+.inputForm {
+    display: block;
+    line-height: 1.5;
+    /* padding: 17px 60px; */
+}
+
+.formStyle1{
+    background-color: lightgray;
+    width: 100%;
+}
+
+.formStyle2{
+    background-color: darkgray;
+    width: 100%;
+}
+
+.increaseDecreaseButton {
+    background-color: #ee2d37;
+    color: #FFFFFF;
+}
+
+.homepage {
+    text-align: center;
+}
+
+.font {
+    font-family: 'Amatic SC';
+}
+
