@@ -1,19 +1,13 @@
 'use strict';
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
-
-    await queryInterface.createTable('vertical_pull', {
-
+    await queryInterface.createTable('abs', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
       exercise: {
         type: Sequelize.STRING
       },
@@ -21,16 +15,16 @@ module.exports = {
         type: Sequelize.STRING
       },
       createdAt: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
+        allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
-
   down: async (queryInterface, Sequelize) => {
-
-  await queryInterface.dropTable('vertical_pull');
+    await queryInterface.dropTable('abs');
   }
 };
