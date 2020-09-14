@@ -16,42 +16,42 @@ class MovementMenu extends Component {
 
         this.state = {
 
-        data: [],
+        inclinePush: [],
 
         dropdownInclinePushValue: "Incline Medium Grip Bench Press",
 
-        inclinePush: [
-            {
-                id: 1,
-                name: "Incline Wide Grip Bench Press",
-                category: "Incline Push"
-            },
-            {
-                id: 2,
-                name: "Low Incline Dumbbell Press",
-                category: "Incline Push"
-            },
-            {
-                id: 3,
-                name: "Low Incline Dumbbell Press",
-                category: "Incline Push"
-            },
-            {
-                id: 4,
-                name: "Incline Dumbbell Press",
-                category: "Incline Push"
-            },
-            {
-                id: 5,
-                name: "Incline Close Grip Bench Press",
-                category: "Incline Push"
-            },
-            {
-                id: 6,
-                name: "Incline Machine Bench Press",
-                category: "Incline Push"
-            }
-        ],
+        // inclinePush: [
+        //     {
+        //         id: 1,
+        //         name: "Incline Wide Grip Bench Press",
+        //         category: "Incline Push"
+        //     },
+        //     {
+        //         id: 2,
+        //         name: "Low Incline Dumbbell Press",
+        //         category: "Incline Push"
+        //     },
+        //     {
+        //         id: 3,
+        //         name: "Low Incline Dumbbell Press",
+        //         category: "Incline Push"
+        //     },
+        //     {
+        //         id: 4,
+        //         name: "Incline Dumbbell Press",
+        //         category: "Incline Push"
+        //     },
+        //     {
+        //         id: 5,
+        //         name: "Incline Close Grip Bench Press",
+        //         category: "Incline Push"
+        //     },
+        //     {
+        //         id: 6,
+        //         name: "Incline Machine Bench Press",
+        //         category: "Incline Push"
+        //     }
+        // ],
 
         dropdownChestIsolationValue: "Flat Dumbbell Flye",
 
@@ -103,12 +103,14 @@ class MovementMenu extends Component {
 
         let serverData = await response.json();
 
+        console.log(serverData)
+
         this.setState({
 
-            data:serverData
+            inclinePush:serverData
         }, () => {
             
-            console.log(this.state.data)
+            console.log(this.state.inclinePush)
         })
     }
 
@@ -161,7 +163,7 @@ class MovementMenu extends Component {
 
         let inclinePushArray = this.state.inclinePush.map((inclinePushName, index) => {
 
-        return <option className="" key={index} ref={inclinePushName.name} value={inclinePushName.name}>{inclinePushName.name}</option>
+        return <option className="" key={index} ref={inclinePushName.exercise} value={inclinePushName.exercise}>{inclinePushName.exercise}</option>
      
         });
 
@@ -171,12 +173,13 @@ class MovementMenu extends Component {
            
         });
 
-        let results = this.state.data.map(object => {
+        // let results = this.state.data.map(object => {
 
-            return (
-                <> <div>{object.excercise}</div> </>
-            )
-        })
+        //     console.log(object)
+        //     return (
+        //         <> <div>{object.exercise}</div> </>
+        //     )
+        // })
     return (
         <>
             <div className="container">
@@ -214,7 +217,7 @@ class MovementMenu extends Component {
                     <Link to="/Workout" className="continueButton">Continue</Link>      
                 </div>
             </div> 
-            {results}
+            {/* {results} */}
         </>
         )
     }
