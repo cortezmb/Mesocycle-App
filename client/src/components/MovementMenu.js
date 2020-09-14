@@ -171,10 +171,10 @@ class MovementMenu extends Component {
            
         });
 
-        let results = this.state.data.map(user => {
+        let results = this.state.data.map(object => {
 
             return (
-                <> <div>{user.username}</div> </>
+                <> <div>{object.excercise}</div> </>
             )
         })
     return (

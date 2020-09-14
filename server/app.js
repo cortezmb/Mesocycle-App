@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 
 const db = require('./models');
 
-const PORT = 3000; 
+const PORT = 3001; 
 
 //middleware
 app.use(bodyParser.urlencoded({extended: false}));
@@ -21,5 +21,5 @@ app.use(require('./routes/api'));//post data for an exercise to database, lookup
 
 //Start server
 app.listen(PORT, () => {
-    console.log('Listening on port 3000');
+    console.log('Listening on port 3001');
 })
