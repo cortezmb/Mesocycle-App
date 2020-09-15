@@ -30,3 +30,11 @@ export const chooseRearOrSideDelts = (exercise) => {
         movement: exercise
     }
 }
+
+export const chooseHorizontalPull = (exercise) => {
+
+    return {
+        type: 'ADD_HORIZONTAL_PULL',
+        movement: exercise
+    }
+}

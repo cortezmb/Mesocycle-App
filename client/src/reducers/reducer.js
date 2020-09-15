@@ -22,6 +22,10 @@ const initialState = {
     rearOrSideDeltsMovement:
         {
             name: ""
+        },
+    horizontalPullMovement:
+        {
+            name: ""
         }
 }
 
@@ -73,6 +77,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 rearOrSideDeltsMovement: action.movement
+            }
+        case 'ADD_HORIZONTAL_PULL':
+            return {
+                ...state,
+                horizontalPullMovement: action.movement
             }
         default:
             return state;

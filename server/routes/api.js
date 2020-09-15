@@ -26,13 +26,19 @@ router.get('/api', async (req, res) => {
                         {
                                 attributes: ['exercise']
                         })
+
+                let horizontalPullResults =  await db.horizontal_pull.findAll(
+                        {
+                                attributes: ['exercise']
+                        })
                 
                         res.json(
                                 {
                                         inclinePushResults: inclinePushResults, 
                                         chestIsolationResults: chestIsolationResults,
                                         horizontalPushResults: horizontalPushResults,
-                                        rearOrSideDeltsResults: rearOrSideDeltsResults
+                                        rearOrSideDeltsResults: rearOrSideDeltsResults,
+                                        horizontalPullResults: horizontalPullResults
                                 })
         } catch (error) {
                 console.log('error inside of create catch', error);
