@@ -7,32 +7,36 @@ router.get('/api', async (req, res) => {
 
         try {
 
-                db.incline_push.findAll(
+                let inclinePushResults = await db.incline_push.findAll(
                         {
                                 attributes: ['exercise']
                         })
 
-                        .then(results => {
-                                res.json(results)
+                let chestIsolationResults =  await db.chest_isolation.findAll(
+                        {
+                                attributes: ['exercise']
                         })
 
+                let horizontalPushResults =  await db.horizontal_push.findAll(
+                        {
+                                attributes: ['exercise']
+                        })
+
+                let rearOrSideDeltsResults =  await db.rear_or_side_delts.findAll(
+                        {
+                                attributes: ['exercise']
+                        })
+                
+                        res.json(
+                                {
+                                        inclinePushResults: inclinePushResults, 
+                                        chestIsolationResults: chestIsolationResults,
+                                        horizontalPushResults: horizontalPushResults,
+                                        rearOrSideDeltsResults: rearOrSideDeltsResults
+                                })
         } catch (error) {
                 console.log('error inside of create catch', error);
         }
-
-        //         res.send([{
-        //                 id: 1,
-        //                 username: 'Michael'
-        //         },
-        //         {
-        //                 id: 2,
-        //                 username: 'John'
-        //         },
-        //         {
-        //                 id: 3,
-        //                 username: 'Dan'
-        //         }
-        // ]);
 })
 
 module.exports = router;

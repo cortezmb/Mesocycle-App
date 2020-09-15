@@ -10,7 +10,7 @@ const BaseLayout = (props) => {
             <div className="container-fluid w-100">
                 <div className="row header">
                     <div className="col-sm col-md col-lg d-flex w-100 align-self-center h-100 ">
-                    <img className="headerImage img-fluid mx-auto" src="../images/MESOCYCLE LOGO_red_bcg.PNG" alt=""></img>
+                    <img className="headerImage img-fluid mx-auto" src="" alt=""></img>
                     </div>
                 </div>
             </div>

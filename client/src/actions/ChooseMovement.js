@@ -7,8 +7,6 @@ export const chooseInclinePush = (exercise) => {
     }
 }
 
-
-
 export const chooseChestIsolation = (exercise) => {
 
     return {
@@ -17,3 +15,18 @@ export const chooseChestIsolation = (exercise) => {
     }
 }
 
+export const chooseHorizontalPush = (exercise) => {
+
+    return {
+        type: 'ADD_HORIZONTAL_PUSH',
+        movement: exercise
+    }
+}
+
+export const chooseRearOrSideDelts = (exercise) => {
+
+    return {
+        type: 'ADD_REAR_OR_SIDE_DELTS',
+        movement: exercise
+    }
+}

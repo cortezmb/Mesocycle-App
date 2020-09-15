@@ -37,3 +37,9 @@ sequelize model:generate --name triceps --attributes exercise:string,link:string
 sequelize model:generate --name vertical_pull --attributes exercise:string,link:string
 
 sequelize model:generate --name vertical_triceps --attributes exercise:string,link:string
+
+sequelize model:generate --name rear_or_side_delts --attributes exercise:string,link:string
+
+sequelize model:generate --name incline_push_or_front_delts --attributes exercise:string,link:string
+
+sequelize model:generate --name chest_isolation_or_triceps --attributes exercise:string,link:string
