@@ -5,6 +5,7 @@ import { chooseInclinePush } from '../actions/ChooseMovement';
 import { chooseChestIsolation } from '../actions/ChooseMovement';
 import { chooseHorizontalPush } from '../actions/ChooseMovement';
 import { chooseRearOrSideDelts } from '../actions/ChooseMovement';
+import { chooseHorizontalPull } from '../actions/ChooseMovement';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 import'./layout/BaseLayoutStyle.css';
@@ -26,13 +27,17 @@ class DayOne extends Component {
 
         rearOrSideDelts: [],
 
+        horizontalPull: [],
+
         dropdownInclinePushValue: "Incline Medium Grip Bench Press",
 
         dropdownChestIsolationValue: "Flat Dumbbell Flye",
 
         dropdownHorizontalPushValue: "Medium Grip Bench Press",
 
-        dropdownRearOrSideDeltsValue: "Barbell Facepull"
+        dropdownRearOrSideDeltsValue: "Barbell Facepull",
+
+        dropdownHorizontalPullValue: "Barbell Bent Over Row"
 
         }
     }
@@ -52,11 +57,12 @@ class DayOne extends Component {
             inclinePush: serverData.inclinePushResults,
             chestIsolation: serverData.chestIsolationResults,
             horizontalPush: serverData.horizontalPushResults,
-            rearOrSideDelts: serverData.rearOrSideDeltsResults
+            rearOrSideDelts: serverData.rearOrSideDeltsResults,
+            horizontalPull: serverData.horizontalPullResults
 
         }, () => {
             
-            console.log(this.state.inclinePush, this.state.chestIsolation, this.state.horizontalPush, this.state.rearOrSideDelts)
+            console.log(this.state.inclinePush, this.state.chestIsolation, this.state.horizontalPush, this.state.rearOrSideDelts, this.state.horizontalPull)
         })
     }
 
@@ -69,7 +75,8 @@ class DayOne extends Component {
                 dropdownInclinePushValue: e.target.value,
                 dropdownChestIsolationValue: e.target.value,
                 dropdownHorizontalPushValue: e.target.value,
-                dropdownrearOrSideDeltsValue: e.target.value
+                dropdownRearOrSideDeltsValue: e.target.value,
+                dropdownHorizontalPullValue: e.target.value
         });
     }
 
@@ -131,13 +138,30 @@ class DayOne extends Component {
 
         let rearOrSideDeltsExercise = {
 
-            name: this.state.dropdownrearOrSideDeltsValue
+            name: this.state.dropdownRearOrSideDeltsValue
         }
     
         
         //collect the data from the form 
         //this uploads data to the global store
         this.props.addSideOrRearDelts(rearOrSideDeltsExercise)
+    }
+
+    handleSubmitHorizontalPull = (e) => {
+
+        e.preventDefault();
+
+        // console.log(e.target.value)
+
+        let horizontalPullExercise = {
+
+            name: this.state.dropdownHorizontalPullValue
+        }
+    
+        
+        //collect the data from the form 
+        //this uploads data to the global store
+        this.props.addHorizontalPull(horizontalPullExercise)
     }
 
   render() {
@@ -163,6 +187,12 @@ class DayOne extends Component {
         let rearOrSideDeltsArray = this.state.rearOrSideDelts.map((rearOrSideDeltsName, index) => {
 
         return <option key={index} ref={rearOrSideDeltsName.exercise} value={rearOrSideDeltsName.exercise} >{rearOrSideDeltsName.exercise}</option> 
+               
+            });
+
+        let horizontalPullArray = this.state.horizontalPull.map((horizontalPullName, index) => {
+
+        return <option key={index} ref={horizontalPullName.exercise} value={horizontalPullName.exercise} >{horizontalPullName.exercise}</option> 
                
             });
 
@@ -218,6 +248,18 @@ class DayOne extends Component {
                                 <input className="submit font" type="submit" value="Submit" />
                             </div>
                         </form> 
+
+                        <form className="formStyle1" onSubmit={this.handleSubmitHorizontalPull}>
+                            <div className="dropdown">
+                                <label className="category font">Horizontal Pull</label>
+                                <label>
+                                    <select className="select font" value={this.state.dropdownHorizontalPullValue} onChange={this.handleChange}>
+                                    {horizontalPullArray}
+                                    </select>
+                                </label>
+                                <input className="submit font" type="submit" value="Submit" />
+                            </div>
+                        </form> 
                     </div>
                     {/* <div className="col">
                         <RepMaxInput />
@@ -243,7 +285,8 @@ const mapDispatchToProps = (dispatch) => {
       addInclinePush: (inclinePushExercise) => dispatch(chooseInclinePush(inclinePushExercise)),
       addChestIsolation: (chestIsolationExercise) => dispatch(chooseChestIsolation(chestIsolationExercise)),
       addHorizontalPush: (horizontalPushExercise) => dispatch(chooseHorizontalPush(horizontalPushExercise)),
-      addSideOrRearDelts: (rearOrSideDeltsExercise) => dispatch(chooseRearOrSideDelts(rearOrSideDeltsExercise))
+      addSideOrRearDelts: (rearOrSideDeltsExercise) => dispatch(chooseRearOrSideDelts(rearOrSideDeltsExercise)),
+      addHorizontalPull: (horizontalPullExercise) => dispatch(chooseHorizontalPull(horizontalPullExercise))
     }
   }
   
