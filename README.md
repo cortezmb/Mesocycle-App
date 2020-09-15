@@ -1,5 +1,5 @@
 
-<img src="client/src/components/images/MESOCYCLE LOGO_red_bcg.png" alt="Mesocycle Logo" width="300"/>
+<img src="client/src/components/images/MESOCYCLE_LOGO_red_bcg.png" alt="Mesocycle Logo" width="300"/>
 
 # MESOCYCLE
 

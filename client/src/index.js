@@ -6,7 +6,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Homepage from './components/Homepage';
 import Videos from './components/Videos';
 import WorkoutOfTheDay from './components/WorkoutOfTheDay';
-import MovementMenu from './components/MovementMenu';
+import DayOne from './components/DayOne';
 import reducer from "./reducers/reducer";
 import BaseLayout from './components/layout/BaseLayout'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -31,7 +31,7 @@ ReactDOM.render(
         <Route exact path='/' component={Homepage}/>
 
         {/* This view is where use will choose a movement from the dropdown menu */}
-        <Route path='/Movement' component={MovementMenu}/>
+        <Route path='/Movement' component={DayOne}/>
 
         <Route path='/Workout' component={WorkoutOfTheDay}/>
 

@@ -4,12 +4,22 @@ const initialState = {
     counter: 0,
     weight1: 0,
     weight2: 0,
+    weight3: 0,
+
     inclinePushMovement:
         {
             name: ""
         },
     
-        chestIsolationMovement: 
+    chestIsolationMovement: 
+        {
+            name: ""
+        },
+    horizontalPushMovement:
+        {
+            name: ""
+        },
+    rearOrSideDeltsMovement:
         {
             name: ""
         }
@@ -39,6 +49,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 weight2: action.weight2.pounds
             }
+        case 'INCREASE_MAX_HORIZONTAL_PUSH':
+            return {
+                ...state,
+                weight3: action.weight3.pounds
+            }
         case 'ADD_INCLINE_PUSH':
             return {
                 ...state,
@@ -48,6 +63,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 chestIsolationMovement: action.movement
+            }
+        case 'ADD_HORIZONTAL_PUSH':
+            return {
+                ...state,
+                horizontalPushMovement: action.movement
+            }
+        case 'ADD_REAR_OR_SIDE_DELTS':
+            return {
+                ...state,
+                rearOrSideDeltsMovement: action.movement
             }
         default:
             return state;
