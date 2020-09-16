@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-class RepMaxInput extends Component {
+class DayOneRepMaxInput extends Component {
   render() {
     return (
       <>
@@ -17,4 +17,4 @@ class RepMaxInput extends Component {
   }
 }
 
-export default RepMaxInput
+export default DayOneRepMaxInput

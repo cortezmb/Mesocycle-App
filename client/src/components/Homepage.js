@@ -22,7 +22,7 @@ class Homepage extends Component {
             Don’t go and start maxing out just yet big guy, just give us a conservative guestimate. You can adjust it later.</p>
         </div>
         <div className="font m-3 d-flex justify-content-center">
-            <Link to="/Movement" className="continueButton">Continue</Link>      
+            <Link to="/DayOne" className="continueButton">Continue</Link>      
         </div>
       </>
     )

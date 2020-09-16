@@ -16,7 +16,7 @@ const PORT = 3001;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());//req.body(fill everything that client is sending back to us)
 
-app.use(require('./routes/api'));//post data for an exercise to database, lookup exercise data
+app.use(require('./routes/apiDayOne'));//post data for an exercise to database, lookup exercise data
 
 
 //Start server
