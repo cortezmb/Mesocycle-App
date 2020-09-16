@@ -7,11 +7,12 @@ import Homepage from './components/Homepage';
 import Videos from './components/Videos';
 import WorkoutOfTheDay from './components/WorkoutOfTheDay';
 import DayOne from './components/DayOne';
+import DayOneRepMaxInput from './components/DayOneRepMaxInput';
 import reducer from "./reducers/reducer";
 import BaseLayout from './components/layout/BaseLayout'
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import RepCounter from './components/RepCounter';
-// import RepMaxInput from './components/RepMaxInput';
+
 // import Statistics from './components/Statistics';
 
 
@@ -31,14 +32,14 @@ ReactDOM.render(
         <Route exact path='/' component={Homepage}/>
 
         {/* This view is where use will choose a movement from the dropdown menu */}
-        <Route path='/Movement' component={DayOne}/>
+        <Route path='/DayOne' component={DayOne}/>
 
         <Route path='/Workout' component={WorkoutOfTheDay}/>
 
         <Route path='/Video' component={Videos}/> 
 
         {/* This view has the movement descriptions and 10RM input forms */}
-        {/* <Route path='/RepMax' component={RepMaxInput}/>  */}
+        <Route path='/DayOneRepMaxInput' component={DayOneRepMaxInput}/> 
 
         {/* This view has the workout of the day with rep counter
         <Route path='/RepCount' component={RepCounter}/> */}
@@ -46,7 +47,6 @@ ReactDOM.render(
         {/* This view has the training volume graph */}
         {/* <Route path='/Stats' component={Statistics}/> */}
 
-        {/* <Route path='/hooks' component={CounterHook}/> */}
       </Switch>
     </BaseLayout>
     </BrowserRouter>

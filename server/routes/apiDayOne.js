@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models'); //Require db from models directory
 
 //This CRUD operation will get and Read exercise data from database and display in dropdown menu
-router.get('/api', async (req, res) => {
+router.get('/apiDayOne', async (req, res) => {
 
         try {
 

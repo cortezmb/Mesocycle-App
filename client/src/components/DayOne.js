@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import RepMaxInput from './RepMaxInput';
 import { chooseInclinePush } from '../actions/ChooseMovement';
 import { chooseChestIsolation } from '../actions/ChooseMovement';
 import { chooseHorizontalPush } from '../actions/ChooseMovement';
@@ -46,7 +45,7 @@ class DayOne extends Component {
     //async/await helps writing asynchronous code in a way that looks synchronous
     componentDidMount = async () => {
 
-        let response = await fetch('/api');
+        let response = await fetch('/apiDayOne');
 
         let serverData = await response.json();
 
@@ -198,6 +197,9 @@ class DayOne extends Component {
 
     return (
         <>
+            <div className="text-center p-3">
+                <p className="font">Choose your exercises for Day 1 of each week. </p>
+            </div>
             <div className="container">
                 <div className="row mainBody dropDownMenu col-sm col-md col-lg col-xl "> 
                     <div className="col">
@@ -261,12 +263,9 @@ class DayOne extends Component {
                             </div>
                         </form> 
                     </div>
-                    {/* <div className="col">
-                        <RepMaxInput />
-                    </div> */}
                 </div>
                 <div className="font m-3 d-flex justify-content-center">
-                    <Link to="/RepMaxInput" className="continueButton">Continue</Link>      
+                    <Link to="/DayOneRepMaxInput" className="continueButton">Continue</Link>      
                 </div>
             </div> 
             {/* {results} */}

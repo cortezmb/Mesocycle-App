@@ -3,11 +3,12 @@ import { connect } from 'react-redux'
 import { increaseMaxInclinePush} from '../actions/IncreaseMax';
 import { increaseMaxChestIsolation} from '../actions/IncreaseMax';
 import { increaseMaxHorizontalPush} from '../actions/IncreaseMax';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import'./layout/BaseLayoutStyle.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-class RepMaxInput extends Component {
+class DayOneRepMaxInput extends Component {
 
   handleSubmitInclinePush = (e) => {
 
@@ -42,9 +43,12 @@ class RepMaxInput extends Component {
   render() {
     return (
       <>
-        {/* <div className="container-fluid h-100 p-0 w-100">
+        <div className="text-center p-3">
+          <p className="font">Choose your 10 Repetition Maximum for each exercise for Day 1 of each week. </p>
+        </div>
+        <div className="container-fluid h-100 p-0 w-100">
           <div className="row position-relative d-flex w-100 flex-row justify-content-center flex-wrap mx-0">
-              <div className=" mainBody inputForm col-sm col-md col-lg col-xl flex-column align-items-center justify-contents-center w-100"> */}
+              <div className=" mainBody inputForm col-sm col-md col-lg col-xl flex-column align-items-center justify-contents-center w-100">
                 <br/>
                 <form className="formStyle1 inputForm" onSubmit={this.handleSubmitInclinePush}>
                   <div className="form-group">
@@ -59,12 +63,12 @@ class RepMaxInput extends Component {
                     <button className="submit font" type="submit">Submit</button>
                   </div>
                 </form>
-                {/* <div>
-                    <Link to="/RepCount" className="btn continueButton">Continue</Link>
-                </div>
-              </div>
+              </div>      
           </div>
-        </div>  */}
+          <div className="font m-3 d-flex justify-content-center">
+            <Link to="/DayOneRepMaxInput" className="continueButton">Continue</Link>      
+          </div>       
+        </div> 
       </>
     )
   }
@@ -82,4 +86,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(RepMaxInput)//connects App component to the provider
+export default connect(null, mapDispatchToProps)(DayOneRepMaxInput)//connects App component to the provider
