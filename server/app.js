@@ -14,9 +14,14 @@ const PORT = 3001;
 
 //middleware
 app.use(bodyParser.urlencoded({extended: false}));
+
 app.use(bodyParser.json());//req.body(fill everything that client is sending back to us)
 
-app.use(require('./routes/apiDayOne'));//post data for an exercise to database, lookup exercise data
+//read exercises for dropdown menu and create exercises from dropdown menu
+app.use(require('./routes/DayOneDropdown'));//pull data for an exercise from database, lookup exercise data
+
+//create weight data from input and read weight data from table
+app.use(require('./routes/DayOneInput'));//post data for an exercise to database, lookup exercise data
 
 
 //Start server

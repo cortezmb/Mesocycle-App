@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models'); //Require db from models directory
 
 //This CRUD operation will get and Read exercise data from database and display in dropdown menu
-router.get('/apiDayOne', async (req, res) => {
+router.get('/DayOneDropdown', async (req, res) => {
 
         try {
 
@@ -38,8 +38,9 @@ router.get('/apiDayOne', async (req, res) => {
                                         chestIsolationResults: chestIsolationResults,
                                         horizontalPushResults: horizontalPushResults,
                                         rearOrSideDeltsResults: rearOrSideDeltsResults,
-                                        horizontalPullResults: horizontalPullResults
+                                        horizontalPullResults: horizontalPullResults,
                                 })
+                
         } catch (error) {
                 console.log('error inside of create catch', error);
         }

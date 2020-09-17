@@ -8,6 +8,7 @@ import { chooseHorizontalPull } from '../actions/ChooseMovement';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 import'./layout/BaseLayoutStyle.css';
+// import axios from 'axios';
 
 
 class DayOne extends Component {
@@ -45,7 +46,7 @@ class DayOne extends Component {
     //async/await helps writing asynchronous code in a way that looks synchronous
     componentDidMount = async () => {
 
-        let response = await fetch('/apiDayOne');
+        let response = await fetch('/DayOneDropdown');
 
         let serverData = await response.json();
 
@@ -79,22 +80,38 @@ class DayOne extends Component {
         });
     }
 
-    handleSubmitInclinePush = (e) => {
+    handleSubmitInclinePush = async (e) => {
 
         e.preventDefault();
 
         // console.log(e.target.value)
-
+            
         let inclinePushExercise = {
 
             name: this.state.dropdownInclinePushValue
         }
-    
         
+        let response = await fetch('/DayOneInput', {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+                    'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(this.props.addInclinePush(inclinePushExercise))
+        })
+            console.log(response)
         //collect the data from the form 
         //this uploads data to the global store
         this.props.addInclinePush(inclinePushExercise);
+
+        // let response = await fetch('/DayOneInput', 
+        // {
+        // method: "POST",
+        // headers: {"Content-Type": "application/json"},
+        // body: JSON.stringify(inclinePushExercise)
+        // });
     }
+
     handleSubmitChestIsolation = (e) => {
 
         e.preventDefault();
@@ -211,7 +228,8 @@ class DayOne extends Component {
                                         {inclinePushArray}
                                         </select>
                                     </label>
-                                    <input className="submit font" type="submit" value="Submit" />                             
+                                    <input className="submit font" type="submit" value= "submit"/>
+                                    {/* <input className="submit font" type="submit" value= {this.props.addInclinePush}/>                              */}
                                 </div>
                         </form>
                         
