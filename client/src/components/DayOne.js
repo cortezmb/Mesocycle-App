@@ -8,7 +8,7 @@ import { chooseHorizontalPull } from '../actions/ChooseMovement';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 import'./layout/BaseLayoutStyle.css';
-// import axios from 'axios';
+import axios from 'axios';
 
 
 class DayOne extends Component {
@@ -84,32 +84,28 @@ class DayOne extends Component {
 
         e.preventDefault();
 
-        // console.log(e.target.value)
+        
             
         let inclinePushExercise = {
 
-            name: this.state.dropdownInclinePushValue
+            exercise: this.state.dropdownInclinePushValue
         }
         
-        let response = await fetch('/DayOneInput', {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-                    'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(this.props.addInclinePush(inclinePushExercise))
+        console.log(inclinePushExercise)
+
+        let response = await axios({
+
+            method: "post",
+            url: '/DayOneInput',
+            data: inclinePushExercise,
+            headers: {'Content-Type': 'application/json'}
         })
-            console.log(response)
+        console.log("I'm posting to a server")
+        console.log(response)
+
         //collect the data from the form 
         //this uploads data to the global store
         this.props.addInclinePush(inclinePushExercise);
-
-        // let response = await fetch('/DayOneInput', 
-        // {
-        // method: "POST",
-        // headers: {"Content-Type": "application/json"},
-        // body: JSON.stringify(inclinePushExercise)
-        // });
     }
 
     handleSubmitChestIsolation = (e) => {
@@ -120,7 +116,7 @@ class DayOne extends Component {
 
         let chestIsolationExercise = {
 
-            name: this.state.dropdownChestIsolationValue
+            exercise: this.state.dropdownChestIsolationValue
         }
     
         
@@ -137,7 +133,7 @@ class DayOne extends Component {
 
         let horizontalPushExercise = {
 
-            name: this.state.dropdownHorizontalPushValue
+            exercise: this.state.dropdownHorizontalPushValue
         }
     
         
@@ -154,7 +150,7 @@ class DayOne extends Component {
 
         let rearOrSideDeltsExercise = {
 
-            name: this.state.dropdownRearOrSideDeltsValue
+            exercise: this.state.dropdownRearOrSideDeltsValue
         }
     
         
@@ -171,7 +167,7 @@ class DayOne extends Component {
 
         let horizontalPullExercise = {
 
-            name: this.state.dropdownHorizontalPullValue
+            exercise: this.state.dropdownHorizontalPullValue
         }
     
         

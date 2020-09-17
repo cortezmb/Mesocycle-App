@@ -13,7 +13,7 @@ router.post('/DayOneInput', async (req, res) => {
             let weight = req.body.weight
             // // let results = await db.users.findAll({ where: {email: req.session.email}});
 
-            console.log(`weight: ${weight}`);
+            console.log(`user: ${user} exercise: ${exercise} weight: ${weight}`);
 
             let dayOneExercises = await db.day_one_exercises.create({
 
