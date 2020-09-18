@@ -4,7 +4,7 @@ const db = require('../models'); //Require db from models directory
 
 
 //This CRUD operation will create attributes in database table from dropdown menu and input form
-router.post('/DayOneInput', async (req, res) => {
+router.post('/inputExercises', async (req, res) => {
 
     try {
             
@@ -30,7 +30,7 @@ router.post('/DayOneInput', async (req, res) => {
 })
 
 //This CRUD operation will read the data that was created in the data base
-router.get('/DayOneInput', async (req, res) => {
+router.get('/inputExercises', async (req, res) => {
 try {
 
     

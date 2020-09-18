@@ -49,7 +49,7 @@ class DayOne extends Component {
     //async/await helps writing asynchronous code in a way that looks synchronous
     componentDidMount = async () => {
 
-        let response = await fetch('/DayOneDropdown');
+        let response = await fetch('/listExercises');
 
         let serverData = await response.json();
 
@@ -99,7 +99,7 @@ class DayOne extends Component {
         let response = await axios({
 
             method: "post",
-            url: '/DayOneInput',
+            url: '/inputExercises',
             data: inclinePushExercise,
             headers: {'Content-Type': 'application/json'}
         })

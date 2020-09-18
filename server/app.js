@@ -35,10 +35,10 @@ app.use(require('./routes/protected'));
 app.use(require('./routes/404')); // error page
 
 //read exercises for dropdown menu and create exercises from dropdown menu
-app.use(require('./routes/DayOneDropdown'));//pull data for an exercise from database, lookup exercise data
+app.use(require('./routes/listExercises'));//pull data for an exercise from database, lookup exercise data
 
 //create weight data from input and read weight data from table
-app.use(require('./routes/DayOneInput'));//post data for an exercise to database, lookup exercise data
+app.use(require('./routes/inputExercises'));//post data for an exercise to database, lookup exercise data
 
 
 //Start server
