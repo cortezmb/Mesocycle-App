@@ -8,16 +8,16 @@ router.post('/DayOneInput', async (req, res) => {
 
     try {
             
-            let user = req.body.user;
+            // let user = req.body.user;
             let exercise = req.body.exercise;
             let weight = req.body.weight
             // // let results = await db.users.findAll({ where: {email: req.session.email}});
 
-            console.log(`user: ${user} exercise: ${exercise} weight: ${weight}`);
+            console.log(` exercise: ${exercise} weight: ${weight}`);
 
             let dayOneExercises = await db.day_one_exercises.create({
 
-                    user: user,
+                    // user: user,
                     exercise: exercise,
                     weight: weight
             })
@@ -36,6 +36,8 @@ try {
     
     let allDayOneExercises = await db.day_one_exercises.findAll({
         
+        // if 
+
         where: {
             user: 1
         }

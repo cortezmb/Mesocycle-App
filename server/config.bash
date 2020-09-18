@@ -44,6 +44,12 @@
 
 # sequelize model:generate --name chest_isolation_or_triceps --attributes exercise:string,link:string
 
-sequelize model:generate --name day_one_exercises --attributes user:integer,exercise:string,weight:integer
+# sequelize model:generate --name day_one_exercises --attributes user:integer,exercise:string,weight:integer
 
-sequelize model:generate --name users --attributes firstName:string,lastName:string,email:string,pwHex:string
+# sequelize model:generate --name users --attributes firstName:string,lastName:string,email:string,pwHex:string
+
+sequelize model:generate --name exercises --attributes exercise:string,link:string,category_id:integer
+
+sequelize model:generate --name categories --attributes title:string
+
+sequelize model:generate --name data --attributes user_id:string,exercise:string,weight:integer,category_id:integer
