@@ -5,7 +5,7 @@ const db = require('../models'); //Require db from models directory
 const bodyParser = require('body-parser');//parse the bodies of all incoming requests
 
 // body-parser
-let urlencodedParser = bodyParser.urlencoded({ extended: false })
+// let urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 // database link to express
 
@@ -16,8 +16,9 @@ router.get('/register', (req, res) => {
 })
 
 //Capture username, password and email from registration.ejs. 
-router.post('/register', urlencodedParser, (req, res) => {
-
+router.post('/register', async (req, res) => {
+try {
+    
     let firstName = req.body.firstName;
     let lastName = req.body.lastName;
     let password = req.body.password;
@@ -25,18 +26,27 @@ router.post('/register', urlencodedParser, (req, res) => {
 
     let passwordEncrypted = bcrypt.hashSync(password, 8); //encrypt password
 
-    db.users.create({
+    console.log(`first name: ${firstName} last name: ${lastName} email: ${email}`)
+
+    let registerUser = await db.users.create({
         firstName: firstName,
         lastName: lastName,
         email: email,
         pwHex: passwordEncrypted
     })
-    .then(user => {
-        res.redirect('/login'); //if password matches will redirect to login page
-    })
-    .catch(error => {
-        res.redirect('/404'); //will redirect to 404 error page
-    })
+    res.json(registerUser)
+    // .then(user => {
+    //     res.redirect('/login'); //if password matches will redirect to login page
+
+} catch (error) {
+    console.log('error inside of try catch', error); //will redirect to 404 error page
+    res.redirect('/404'); //will redirect to 404 error page
+}
+    
+    // })
+    // .catch(error => {
+    //     res.redirect('/404'); //will redirect to 404 error page
+    // })
 })
 
 

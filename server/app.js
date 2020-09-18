@@ -30,7 +30,7 @@ app.use(require('./routes/login'));
 
 app.use(require('./routes/register'));
 
-app.use(require('./routes/protection'));
+app.use(require('./routes/protected'));
 
 app.use(require('./routes/404')); // error page
 

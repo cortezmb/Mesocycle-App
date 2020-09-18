@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');//parse the bodies of all incoming req
 
 
 // body-parser
-let urlencodedParser = bodyParser.urlencoded({ extended: false });
+// let urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 router.get('./login', async (req, res) => {
 
@@ -32,16 +32,17 @@ router.post('/login', async (req, res) => {
                       res.redirect(`/user/${results[0].id}`);           
                 }
                 else {
-                    
+                    console.log('no match found')
                   // no match found for passwords
-                    res.redirect('/404');
+                    // res.redirect('/404');
                 }
             })
         }
   
     }
     catch {
-        res.status(211).redirect('/404');
+        // res.status(211).redirect('/404');
+        console.log("error")
     }
   
   })
