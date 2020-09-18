@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import axios from 'axios';
 import { chooseInclinePush } from '../actions/ChooseMovement';
 import { chooseChestIsolation } from '../actions/ChooseMovement';
 import { chooseHorizontalPush } from '../actions/ChooseMovement';
 import { chooseRearOrSideDelts } from '../actions/ChooseMovement';
 import { chooseHorizontalPull } from '../actions/ChooseMovement';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { increaseMaxInclinePush} from '../actions/ChooseMovement';
+// import { increaseMaxChestIsolation} from '../actions/IncreaseMax';
 import { Link } from "react-router-dom";
 import'./layout/BaseLayoutStyle.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 class DayOne extends Component {
@@ -45,7 +49,7 @@ class DayOne extends Component {
     //async/await helps writing asynchronous code in a way that looks synchronous
     componentDidMount = async () => {
 
-        let response = await fetch('/apiDayOne');
+        let response = await fetch('/listExercises');
 
         let serverData = await response.json();
 
@@ -79,22 +83,43 @@ class DayOne extends Component {
         });
     }
 
-    handleSubmitInclinePush = (e) => {
+    handleSubmitInclinePush = async (e) => {
 
-        e.preventDefault();
+        e.preventDefault();   
 
-        // console.log(e.target.value)
-
+            
         let inclinePushExercise = {
 
-            name: this.state.dropdownInclinePushValue
+            exercise: this.state.dropdownInclinePushValue,
+            weight: this.refs.weight1.value
         }
-    
         
+        console.log(inclinePushExercise)
+
+        let response = await axios({
+
+            method: "post",
+            url: '/inputExercises',
+            data: inclinePushExercise,
+            headers: {'Content-Type': 'application/json'}
+        })
+        console.log("I'm posting to a server")
+        console.log(response)
+
         //collect the data from the form 
         //this uploads data to the global store
-        this.props.addInclinePush(inclinePushExercise);
+        this.props.addInclinePush(
+            {
+            inclinePushExercise: inclinePushExercise,
+            pounds: this.refs.weight1.value
+            });
+
+        // this.props.addInclinePush({
+        //     pounds: this.refs.weight1.value
+        //   });
+
     }
+
     handleSubmitChestIsolation = (e) => {
 
         e.preventDefault();
@@ -103,7 +128,7 @@ class DayOne extends Component {
 
         let chestIsolationExercise = {
 
-            name: this.state.dropdownChestIsolationValue
+            exercise: this.state.dropdownChestIsolationValue
         }
     
         
@@ -120,7 +145,7 @@ class DayOne extends Component {
 
         let horizontalPushExercise = {
 
-            name: this.state.dropdownHorizontalPushValue
+            exercise: this.state.dropdownHorizontalPushValue
         }
     
         
@@ -137,7 +162,7 @@ class DayOne extends Component {
 
         let rearOrSideDeltsExercise = {
 
-            name: this.state.dropdownRearOrSideDeltsValue
+            exercise: this.state.dropdownRearOrSideDeltsValue
         }
     
         
@@ -154,7 +179,7 @@ class DayOne extends Component {
 
         let horizontalPullExercise = {
 
-            name: this.state.dropdownHorizontalPullValue
+            exercise: this.state.dropdownHorizontalPullValue
         }
     
         
@@ -211,7 +236,11 @@ class DayOne extends Component {
                                         {inclinePushArray}
                                         </select>
                                     </label>
-                                    <input className="submit font" type="submit" value="Submit" />                             
+                                    <div className="form-group">
+                                    <input className="submit font " ref="weight1" type="text" placeholder="10RM" />
+                                    </div>
+                                    <input className="submit font" type="submit" value= "submit"/>
+                                    {/* <input className="submit font" type="submit" value= {this.props.addInclinePush}/>                              */}
                                 </div>
                         </form>
                         
@@ -281,7 +310,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
       //the onIncrement function is returning a function named dispatch. 
       //dispatch function needs to be wrapped in a function so it doesn't automatically execute
-      addInclinePush: (inclinePushExercise) => dispatch(chooseInclinePush(inclinePushExercise)),
+      addInclinePush: (inclinePushExercise, pounds) => dispatch(chooseInclinePush(inclinePushExercise), increaseMaxInclinePush(pounds)),
+    //   addInclinePush: (pounds) => dispatch(increaseMaxInclinePush(pounds)),
       addChestIsolation: (chestIsolationExercise) => dispatch(chooseChestIsolation(chestIsolationExercise)),
       addHorizontalPush: (horizontalPushExercise) => dispatch(chooseHorizontalPush(horizontalPushExercise)),
       addSideOrRearDelts: (rearOrSideDeltsExercise) => dispatch(chooseRearOrSideDelts(rearOrSideDeltsExercise)),
