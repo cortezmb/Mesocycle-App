@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'startbootstrap-template/css/sb-admin-2.css';
-import 'startbootstrap-template/css/sb-admin-2.min.css';
+// import 'layout/BaseLayoutStyle';
 
 
 class Registration extends Component {
   render() {
     return (
       <>
-        <div className="container">
+        {/* <div className="container">
           <div className="card o-hidden border-0 shadow-lg my-5">
-            <div className="card-body p-0">
-            {/* <!-- Nested Row within Card Body --> */}
+            <div className="card-body p-0"> */}
+            {/* <!-- Nested Row within Card Body -->
             <div className="row">
               <div className="col-lg-5 d-none d-lg-block bg-register-image"></div>
               <div className="col-lg-7">
@@ -42,7 +41,7 @@ class Registration extends Component {
                     <a href="login.html" className="btn btn-primary btn-user btn-block">
                       Register Account
                     </a>
-                    <hr>
+                    <hr/>
                     <a href="index.html" className="btn btn-google btn-user btn-block">
                       <i className="fab fa-google fa-fw"></i> Register with Google
                     </a>
@@ -62,7 +61,7 @@ class Registration extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
     )
   }

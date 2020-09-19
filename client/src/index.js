@@ -9,6 +9,7 @@ import WorkoutOfTheDay from './components/WorkoutOfTheDay';
 import DayOne from './components/DayOne';
 import DayOneRepMaxInput from './components/DayOneRepMaxInput';
 import Login from './components/Login';
+import Registration from './components/Registration';
 import reducer from "./reducers/reducer";
 import BaseLayout from './components/layout/BaseLayout'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -41,7 +42,7 @@ ReactDOM.render(
 
         <Route path='/Login' component={Login}/> 
 
-        <Route path='/Registration' component={Registraion}/> 
+        <Route path='/Registration' component={Registration}/> 
 
         {/* This view has the movement descriptions and 10RM input forms */}
         <Route path='/DayOneRepMaxInput' component={DayOneRepMaxInput}/> 

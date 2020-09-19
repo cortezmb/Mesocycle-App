@@ -13,9 +13,9 @@ router.get('/listExercises', async (req, res) => {
                         //         model: 'categories',
                         //         required: true
                         // }]
-                        where: {category_id: 14}
+                        where: {category_id: 11}
                 })
-                console.log(inclinePushResults)
+                console.log("I listed exercises")
                         // {
                         //         attributes: ['exercise']
                         // })
