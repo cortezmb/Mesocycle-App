@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');//parse the bodies of all incoming req
 
 
 // body-parser
-// let urlencodedParser = bodyParser.urlencoded({ extended: false });
+let urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 router.get('./login', async (req, res) => {
 
@@ -18,7 +18,8 @@ router.post('/login', async (req, res) => {
         let email = req.body.email; // form
         let password = req.body.password; // form
         let results = await db.users.findAll({ where: {email: email}});
-  
+
+        console.log(results)
         // results is an array of objects from database 
         if (results.length > 0) {
             
@@ -29,7 +30,9 @@ router.post('/login', async (req, res) => {
                 if (response) {
                   req.session.id = results[0].id //userid is an object on the session object
                     req.session.email = email;  // email is an object on the session object
-                      res.redirect(`/user/${results[0].id}`);           
+                      // res.redirect(`/users/${results[0].id}`); 
+                      console.log(`${results[0].id}`); 
+                      // res.json(response)         
                 }
                 else {
                     console.log('no match found')

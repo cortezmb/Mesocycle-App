@@ -99,7 +99,7 @@ class DayOne extends Component {
         let response = await axios({
 
             method: "post",
-            url: '/inputExercises',
+            url: '/createExercises',
             data: inclinePushExercise,
             headers: {'Content-Type': 'application/json'}
         })

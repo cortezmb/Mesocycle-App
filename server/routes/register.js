@@ -40,7 +40,7 @@ try {
 
 } catch (error) {
     console.log('error inside of try catch', error); //will redirect to 404 error page
-    res.redirect('/404'); //will redirect to 404 error page
+    // res.redirect('/404'); //will redirect to 404 error page
 }
     
     // })
