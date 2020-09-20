@@ -5,9 +5,9 @@ import { Provider } from "react-redux"; //this connects the Store with the Compo
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Homepage from './components/Homepage';
 import Videos from './components/Videos';
-import WorkoutOfTheDay from './components/WorkoutOfTheDay';
-import DayOne from './components/DayOne';
-import DayOneRepMaxInput from './components/DayOneRepMaxInput';
+import ListDayOne from './components/ListDayOne';
+import CreateDayOne from './components/CreateDayOne';
+import CreateDayOneRepMaxInput from './components/CreateDayOneRepMaxInput';
 import Login from './components/Login';
 import Registration from './components/Registration';
 import reducer from "./reducers/reducer";
@@ -34,9 +34,9 @@ ReactDOM.render(
         <Route exact path='/' component={Homepage}/>
 
         {/* This view is where use will choose a movement from the dropdown menu */}
-        <Route path='/DayOne' component={DayOne}/>
+        <Route path='/CreateDayOne' component={CreateDayOne}/>
 
-        <Route path='/Workout' component={WorkoutOfTheDay}/>
+        <Route path='/ListDayOne' component={ListDayOne}/>
 
         <Route path='/Video' component={Videos}/> 
 
@@ -45,7 +45,7 @@ ReactDOM.render(
         <Route path='/Registration' component={Registration}/> 
 
         {/* This view has the movement descriptions and 10RM input forms */}
-        <Route path='/DayOneRepMaxInput' component={DayOneRepMaxInput}/> 
+        <Route path='/CreateDayOneRepMaxInput' component={CreateDayOneRepMaxInput}/> 
 
         {/* This view has the workout of the day with rep counter
         <Route path='/RepCount' component={RepCounter}/> */}
