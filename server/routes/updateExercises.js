@@ -28,6 +28,7 @@ try {
                 }
             }
         )
+        res.json(data)
     }
 
 } catch (error) {

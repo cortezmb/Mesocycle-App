@@ -41,7 +41,7 @@ app.use(require('./routes/listExercises'));//pull data for an exercise from data
 app.use(require('./routes/createExercises'));//post data for an exercise to database, lookup exercise data
 
 //updates exercise data from data table
-app.use(require('./routes/updateExercises'));
+// app.use(require('./routes/updateExercises'));
 
 //Start server
 app.listen(PORT, () => {
