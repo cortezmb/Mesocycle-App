@@ -281,13 +281,83 @@ class CreateDayOne extends Component {
 
     return (
         <>
-        <div className="container-fluid">
-            {/* <!-- Page Heading --> */}
-            <h1 className="h3 mb-2 text-gray-800">Day 1 Workout Setup</h1>
-            <p className="mb-4">You will do these same movements each week with an increasing weight.  </p>
-        </div>    
+            {/* <div className="text-center p-3">
+                <p className="font">Choose your exercises for Day 1 of each week. </p>
+            </div>
+            <div className="container">
+                <div className="row mainBody dropDownMenu col-sm col-md col-lg col-xl "> 
+                    <div className="col">
+                        <form className="formStyle1" onSubmit={this.handleSubmitInclinePush}>                        
+                                <div className="dropdown d-flex">
+                                    <label className="category font">Incline Push</label>
+                                    <label>
+                                        <select className="select font" value={this.state.dropdownInclinePushValue} onChange={this.handleChange}>
+                                        {inclinePushArray}
+                                        </select>
+                                    </label>
+                                    <div className="form-group">
+                                    <input className="submit font " ref="weight1" type="text" placeholder="10RM" />
+                                    <input type="hidden" name="theInputGroup" ref="category14" value="14" />
+                                    </div>
+                                    <input className="submit font" type="submit" value= "submit"/>
+                                    {/* <input className="submit font" type="submit" value= {this.props.addInclinePush}/>                              */}
+                                {/* </div>
+                        </form>
+                        
+                        <form className="formStyle2" onSubmit={this.handleSubmitChestIsolation}>
+                            <div className="dropdown">
+                                <label className="category font">Chest Isolation</label>
+                                <label>
+                                    <select className="select font" value={this.state.dropdownChestIsolationValue} onChange={this.handleChange}>
+                                    {chestIsolationArray}
+                                    </select>
+                                </label>
+                                <input className="submit font" type="submit" value="Submit" />
+                            </div>
+                        </form> 
 
+                        <form className="formStyle1" onSubmit={this.handleSubmitHorizontalPush}>
+                            <div className="dropdown">
+                                <label className="category font">Horizontal Push</label>
+                                <label>
+                                    <select className="select font" value={this.state.dropdownHorizontalPushValue} onChange={this.handleChange}>
+                                    {horizontalPushArray}
+                                    </select>
+                                </label>
+                                <input className="submit font" type="submit" value="Submit" />
+                            </div>
+                        </form> 
 
+                        <form className="formStyle2" onSubmit={this.handleSubmitRearOrSideDelts}>
+                            <div className="dropdown">
+                                <label className="category font">Rear or Side Delts</label>
+                                <label>
+                                    <select className="select font" value={this.state.dropdownRearOrSideDeltsValue} onChange={this.handleChange}>
+                                    {rearOrSideDeltsArray}
+                                    </select>
+                                </label>
+                                <input className="submit font" type="submit" value="Submit" />
+                            </div>
+                        </form> 
+
+                        <form className="formStyle1" onSubmit={this.handleSubmitHorizontalPull}>
+                            <div className="dropdown">
+                                <label className="category font">Horizontal Pull</label>
+                                <label>
+                                    <select className="select font" value={this.state.dropdownHorizontalPullValue} onChange={this.handleChange}>
+                                    {horizontalPullArray}
+                                    </select>
+                                </label>
+                                <input className="submit font" type="submit" value="Submit" />
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+                <div className="font m-3 d-flex justify-content-center">
+                    <Link to="/CreateDayOneRepMaxInput" className="continueButton">Continue</Link>      
+                </div>
+            </div>  */} 
+            
         {/* Cards Start Here */}
             <div className="row">
 

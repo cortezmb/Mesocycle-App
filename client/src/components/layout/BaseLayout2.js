@@ -40,34 +40,40 @@ const BaseLayout2 = (props) => {
                         Interface
                     </div>
 
-                    {/* <!-- Nav Item - Pages Collapse Menu --> */}
+                    {/* <!-- Workout Setup Collapse Menu --> */}
                     <li className="nav-item">
                         <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                             <i className="fas fa-fw fa-cog"></i>
-                            <span>Components</span>
+                            <span>Workout Setup</span>
                         </a>
                         <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <h6 className="collapse-header">Custom Components:</h6>
-                                <a className="collapse-item" href="buttons.html">Buttons</a>
-                                <a className="collapse-item" href="cards.html">Cards</a>
+                                <h6 className="collapse-header">Choose a Workout Day:</h6>
+                                {/* <a className="collapse-item" href="buttons.html">Day 1</a> */}
+                                <Link className="collapse-item" to="/CreateDayOne">Day 1</Link>
+                                <Link className="collapse-item" to="/CreateDayOne">Day 2</Link>
+                                <Link className="collapse-item" to="/CreateDayOne">Day 3</Link>
+                                <Link className="collapse-item" to="/CreateDayOne">Day 4</Link>
+                                <Link className="collapse-item" to="/CreateDayOne">Day 5</Link>
+                                <Link className="collapse-item" to="/CreateDayOne">Day 6</Link>
                             </div>
                         </div>
                     </li>
 
-                    {/* <!-- Nav Item - Utilities Collapse Menu --> */}
+                    {/* <!-- Nav Item - Workout Week Collapse Menu --> */}
                     <li className="nav-item">
                         <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                             <i className="fas fa-fw fa-wrench"></i>
-                            <span>Utilities</span>
+                            <span>The Workouts</span>
                         </a>
                         <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                            <h6 className="collapse-header">Custom Utilities:</h6>
-                            <a className="collapse-item" href="utilities-color.html">Colors</a>
-                            <a className="collapse-item" href="utilities-border.html">Borders</a>
-                            <a className="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a className="collapse-item" href="utilities-other.html">Other</a>
+                            <h6 className="collapse-header">Choose a Week:</h6>
+                            <Link className="collapse-item" to="/ListDayOne">Week 1</Link>
+                            <Link className="collapse-item" to="/ListDayOne">Week 2</Link>
+                            <Link className="collapse-item" to="/ListDayOne">Week 3</Link>
+                            <Link className="collapse-item" to="/ListDayOne">Week 4</Link>
+                            <Link className="collapse-item" to="/ListDayOne">Week 5</Link>
                             </div>
                         </div>
                     </li>
@@ -76,12 +82,12 @@ const BaseLayout2 = (props) => {
                     <hr className="sidebar-divider"/>
 
                     {/* <!-- Heading --> */}
-                    <div className="sidebar-heading">
+                    {/* <div className="sidebar-heading">
                     Addons
-                    </div>
+                    </div> */}
 
                     {/* <!-- Nav Item - Pages Collapse Menu --> */}
-                    <li className="nav-item active">
+                    {/* <li className="nav-item active">
                         <a className="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                             <i className="fas fa-fw fa-folder"></i>
                             <span>Pages</span>
@@ -98,21 +104,21 @@ const BaseLayout2 = (props) => {
                             <a className="collapse-item active" href="blank.html">Blank Page</a>
                             </div>
                         </div>
-                    </li>
+                    </li> */}
 
                     {/* <!-- Nav Item - Charts --> */}
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <a className="nav-link" href="charts.html">
                             <i className="fas fa-fw fa-chart-area"></i>
                             <span>Charts</span></a>
-                    </li>
+                    </li> */}
 
                     {/* <!-- Nav Item - Tables --> */}
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <a className="nav-link" href="tables.html">
                             <i className="fas fa-fw fa-table"></i>
                             <span>Tables</span></a>
-                    </li>
+                    </li> */}
 
                     {/* <!-- Divider --> */}
                     <hr className="sidebar-divider d-none d-md-block"/>
@@ -132,7 +138,7 @@ const BaseLayout2 = (props) => {
                     <div id="content">
 
                         {/* <!-- Topbar --> */}
-                        {/* <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"> */}
+                        <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                             {/* <!-- Sidebar Toggle (Topbar) --> */}
                             <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
@@ -154,7 +160,7 @@ const BaseLayout2 = (props) => {
                             </form> */}
 
                             {/* <!-- Topbar Navbar --> */}
-                            {/* <ul className="navbar-nav ml-auto"> */}
+                            <ul className="navbar-nav ml-auto">
 
                                 {/* <!-- Nav Item - Search Dropdown (Visible Only XS) --> */}
                                 <li className="nav-item dropdown no-arrow d-sm-none">
@@ -162,7 +168,7 @@ const BaseLayout2 = (props) => {
                                         <i className="fas fa-search fa-fw"></i>
                                     </a> 
                                     {/* <!-- Dropdown - Messages --> */}
-                                    {/* <div className="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                                    <div className="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                         <form className="form-inline mr-auto w-100 navbar-search">
                                             <div className="input-group">
                                                 <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"/>
@@ -173,7 +179,7 @@ const BaseLayout2 = (props) => {
                                                 </div>
                                             </div>
                                         </form>
-                                    </div> */}
+                                    </div>
                                 </li>
 
                                 {/* <!-- Nav Item - Alerts --> */}
@@ -310,9 +316,9 @@ const BaseLayout2 = (props) => {
                                         </a>
                                     </div> */}
                                 {/* </li> */}
-                            {/* </ul>
+                            </ul>
 
-                        </nav> */}
+                        </nav>
                         {/* <!-- End of Topbar --> */}
 
                         {/* <!-- Begin Page Content --> */}

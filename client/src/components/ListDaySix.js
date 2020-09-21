@@ -173,10 +173,10 @@ class ListDayOne extends Component {
           <h1 className="h3 mb-2 text-gray-800">Week 1</h1>
           <p className="mb-4">Rest 1-1/2 minutes to 2-1/2 minutes between sets. </p>
 
-          {/* <!-- DataTable --> */}
+          {/* <!-- DataTales Example --> */}
           <div className="card shadow mb-4">
             <div className="card-header py-3">
-              <h6 className="m-0 font-weight-bold text-danger">Day 1</h6>
+              <h6 className="m-0 font-weight-bold text-primary">Day 1</h6>
             </div>
             <div className="card-body">
               <div className="table-responsive">
@@ -191,177 +191,16 @@ class ListDayOne extends Component {
                       {/* <th>How To Video</th> */}
                     </tr>
                   </thead>
-                  <tbody className="text-center">
-
-                      {inclinePushArray}
-
-                      {chestIsolationArray} 
-
-                      {horizontalPushArray} 
-
-                      {rearOrSideDeltsArray}
-
-                      {horizontalPullArray}
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-
-          <div className="card shadow mb-4">
-            <div className="card-header py-3">
-              <h6 className="m-0 font-weight-bold text-danger">Day 2</h6>
-            </div>
-            <div className="card-body">
-              <div className="table-responsive">
-                <table className="table table-bordered text-center" id="dataTable" width="100%" cellSpacing="0">
-                  <thead>
+                  {/* <tfoot>
                     <tr>
-                      <th>Exercise</th>
-                      <th>Weight</th>
+                    <th>Exercise</th>
+                      <th>Weight lbs</th>
                       <th># of Sets</th>
                       <th>Rep Range</th>
                       <th>Reps Left Until Fail</th>
-                      {/* <th>How To Video</th> */}
+                      <th>How To Video</th> 
                     </tr>
-                  </thead>
-                  <tbody className="text-center">
-
-                      {inclinePushArray}
-
-                      {chestIsolationArray} 
-
-                      {horizontalPushArray} 
-
-                      {rearOrSideDeltsArray}
-
-                      {horizontalPullArray}
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div className="card shadow mb-4">
-            <div className="card-header py-3">
-              <h6 className="m-0 font-weight-bold text-danger">Day 3</h6>
-            </div>
-            <div className="card-body">
-              <div className="table-responsive">
-                <table className="table table-bordered text-center" id="dataTable" width="100%" cellSpacing="0">
-                  <thead>
-                    <tr>
-                      <th>Exercise</th>
-                      <th>Weight</th>
-                      <th># of Sets</th>
-                      <th>Rep Range</th>
-                      <th>Reps Left Until Fail</th>
-                      {/* <th>How To Video</th> */}
-                    </tr>
-                  </thead>
-                  <tbody className="text-center">
-
-                      {inclinePushArray}
-
-                      {chestIsolationArray} 
-
-                      {horizontalPushArray} 
-
-                      {rearOrSideDeltsArray}
-
-                      {horizontalPullArray}
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div className="card shadow mb-4">
-            <div className="card-header py-3">
-              <h6 className="m-0 font-weight-bold text-danger">Day 4</h6>
-            </div>
-            <div className="card-body">
-              <div className="table-responsive">
-                <table className="table table-bordered text-center" id="dataTable" width="100%" cellSpacing="0">
-                  <thead>
-                    <tr>
-                      <th>Exercise</th>
-                      <th>Weight</th>
-                      <th># of Sets</th>
-                      <th>Rep Range</th>
-                      <th>Reps Left Until Fail</th>
-                      {/* <th>How To Video</th> */}
-                    </tr>
-                  </thead>
-                  <tbody className="text-center">
-
-                      {inclinePushArray}
-
-                      {chestIsolationArray} 
-
-                      {horizontalPushArray} 
-
-                      {rearOrSideDeltsArray}
-
-                      {horizontalPullArray}
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div className="card shadow mb-4">
-            <div className="card-header py-3">
-              <h6 className="m-0 font-weight-bold text-danger">Day 5</h6>
-            </div>
-            <div className="card-body">
-              <div className="table-responsive">
-                <table className="table table-bordered text-center" id="dataTable" width="100%" cellSpacing="0">
-                  <thead>
-                    <tr>
-                      <th>Exercise</th>
-                      <th>Weight</th>
-                      <th># of Sets</th>
-                      <th>Rep Range</th>
-                      <th>Reps Left Until Fail</th>
-                      {/* <th>How To Video</th> */}
-                    </tr>
-                  </thead>
-                  <tbody className="text-center">
-
-                      {inclinePushArray}
-
-                      {chestIsolationArray} 
-
-                      {horizontalPushArray} 
-
-                      {rearOrSideDeltsArray}
-
-                      {horizontalPullArray}
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div className="card shadow mb-4">
-            <div className="card-header py-3">
-              <h6 className="m-0 font-weight-bold text-danger">Day 6</h6>
-            </div>
-            <div className="card-body">
-              <div className="table-responsive">
-                <table className="table table-bordered text-center" id="dataTable" width="100%" cellSpacing="0">
-                  <thead>
-                    <tr>
-                      <th>Exercise</th>
-                      <th>Weight</th>
-                      <th># of Sets</th>
-                      <th>Rep Range</th>
-                      <th>Reps Left Until Fail</th>
-                      {/* <th>How To Video</th> */}
-                    </tr>
-                  </thead>
+                  </tfoot> */}
                   <tbody className="text-center">
 
                       {inclinePushArray}
