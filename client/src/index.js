@@ -7,7 +7,7 @@ import Homepage from './components/Homepage';
 // import Videos from './components/Videos';
 import ListDayOne from './components/ListDayOne';
 import CreateDayOne from './components/CreateDayOne';
-import Login from './components/Login';
+import Login2 from './components/Login2';
 import Registration from './components/Registration';
 import reducer from "./reducers/reducer";
 import BaseLayout2 from './components/layout/BaseLayout2'
@@ -34,7 +34,7 @@ ReactDOM.render(
 
         <Route path='/ListDayOne' component={ListDayOne}/>
 
-        <Route path='/Login' component={Login}/> 
+        <Route path='/Login2' component={Login2}/> 
 
         <Route path='/Registration' component={Registration}/> 
 

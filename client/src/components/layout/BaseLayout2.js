@@ -63,8 +63,8 @@ const BaseLayout2 = (props) => {
                     {/* <!-- Nav Item - Workout Week Collapse Menu --> */}
                     <li className="nav-item">
                         <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                            <i className="fas fa-fw fa-wrench"></i>
-                            <span>The Workouts</span>
+                            <i className="fas fa-fw fa-dumbbell"></i>
+                            <span> The Workouts</span>
                         </a>
                         <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">

@@ -11,6 +11,12 @@ body {
 
 }
 
+.registerImage {
+  background: url("../images/register_image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
 .header{
     height: 30vh;
     background-color: black;
@@ -104,6 +110,23 @@ label{
     font-family: 'Amatic SC';
 }
 
+.bg-login-image {
+  background: url("../images/register_image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-register-image {
+  background: url("../images/register_image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-password-image {
+  background: url("../images/register_image.jpg");
+  background-position: center;
+  background-size: cover;
+}
 /*!
  * Start Bootstrap - SB Admin 2 v4.1.1 (https://startbootstrap.com/themes/sb-admin-2)
  * Copyright 2013-2020 Start Bootstrap
