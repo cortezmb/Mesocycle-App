@@ -40,6 +40,8 @@ router.get('/listExercises', async (req, res) => {
                                         rearOrSideDeltsResults: rearOrSideDeltsResults,
                                         horizontalPullResults: horizontalPullResults
                                 })
+                        
+                        
                 
         } catch (error) {
                 console.log('error inside of create catch', error);
