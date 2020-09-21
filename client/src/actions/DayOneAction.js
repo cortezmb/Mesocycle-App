@@ -64,10 +64,10 @@ export const increaseMaxHorizontalPush = (pounds) => {
     }
 }
 
-export const increaseMaxSideOrRearDelts = (pounds) => {
+export const increaseMaxRearOrSideDelts = (pounds) => {
 
     return {
-        type: 'INCREASE_MAX_SIDE_OR_REAR_DELTS',
+        type: 'INCREASE_MAX_REAR_OR_SIDE_DELTS',
         weight4: pounds
     }
 }

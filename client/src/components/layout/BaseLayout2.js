@@ -157,10 +157,10 @@ const BaseLayout2 = (props) => {
                             {/* <ul className="navbar-nav ml-auto"> */}
 
                                 {/* <!-- Nav Item - Search Dropdown (Visible Only XS) --> */}
-                                {/* <li className="nav-item dropdown no-arrow d-sm-none">
+                                <li className="nav-item dropdown no-arrow d-sm-none">
                                     <a className="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i className="fas fa-search fa-fw"></i>
-                                    </a> */}
+                                    </a> 
                                     {/* <!-- Dropdown - Messages --> */}
                                     {/* <div className="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                         <form className="form-inline mr-auto w-100 navbar-search">
@@ -173,8 +173,8 @@ const BaseLayout2 = (props) => {
                                                 </div>
                                             </div>
                                         </form>
-                                    </div>
-                                </li> */}
+                                    </div> */}
+                                </li>
 
                                 {/* <!-- Nav Item - Alerts --> */}
                                 {/* <li className="nav-item dropdown no-arrow mx-1"> */}

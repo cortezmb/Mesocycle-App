@@ -71,9 +71,8 @@ label{
     background-color: #ee2d37;
     color: #FFFFFF;
     border: 1px solid #ee2d37;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-size: 2vh;
+    padding: 2px 4px;
+    border-radius: 4px;
 }
 
 .inputForm {

@@ -62,7 +62,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 weight3: action.weight3.pounds
             }
-        case 'INCREASE_MAX_SIDE_OR_REAR_DELTS':
+        case 'INCREASE_MAX_REAR_OR_SIDE_DELTS':
             return {
                 ...state,
                 weight4: action.weight4.pounds
