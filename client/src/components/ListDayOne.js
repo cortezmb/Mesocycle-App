@@ -20,6 +20,16 @@ class ListDayOne extends Component {
       rearOrSideDelts: [],
 
       horizontalPull: [],
+
+      inclinePushVideo: [],
+
+      chestIsolationVideo: [],
+
+      horizontalPushVideo: [],
+
+      rearOrSideDeltsVideo: [],
+
+      horizontalPullVideo: []
     }
   }
 
@@ -29,34 +39,31 @@ class ListDayOne extends Component {
 
     let serverData = await response.json();
 
+    let videoResponse = await fetch('/listExercises');
+
+    let videoData = await videoResponse.json();
+
+    console.log(videoData)
     this.setState({
 
         inclinePush: serverData.inclinePushResults,
         chestIsolation: serverData.chestIsolationResults,
         horizontalPush: serverData.horizontalPushResults,
         rearOrSideDelts: serverData.rearOrSideDeltsResults,
-        horizontalPull: serverData.horizontalPullResults
+        horizontalPull: serverData.horizontalPullResults,
+
+        inclinePushVideo: videoData.inclinePushResults,
+        chestIsolationVideo: videoData.chestIsolationResults,
+        horizontalPushVideo: videoData.horizontalPushResults,
+        rearOrSideDeltsVideo: videoData.rearOrSideDeltsResults,
+        horizontalPullVideo: videoData.horizontalPullResults
     
     //,() => { ensures that it only makes 1 request
     }, () => {
-      console.log(this.state.inclinePush, this.state.chestIsolation, this.state.horizontalPush, this.state.rearOrSideDelts, this.state.horizontalPull)
+      console.log(this.state.inclinePush, this.state.chestIsolation, this.state.horizontalPush, this.state.rearOrSideDelts, this.state.horizontalPull, this.state.inclinePushVideo)
 
     })
   }
-
-  // weightPercent = ((inclinePush) => {
-
-  //   let total = 0;
-  //   let num = .85;
-
-  //   this.state.inclinePush.map((inclinePushName => {
-
-  //     total = inclinePushName.weight * num;
-
-  //   }));
-  //   return total(inclinePush)
-  // })
-
 
   render() {
 
@@ -65,22 +72,38 @@ class ListDayOne extends Component {
 
     let inclinePushArray = this.state.inclinePush.map((inclinePushName, index) => {
 
-      
       return <> 
-
-              <tr key={index} data-inclinepush-exercise = {inclinePushName.exercise} data-inclinepush-weight={inclinePushName.weight}>
+              <tr key={index} data-inclinepush-exercise ={inclinePushName.exercise} data-inclinepush-weight ={inclinePushName.weight} >
                 <td>{inclinePushName.exercise}</td>
-                <td>{Math.round((inclinePushName.weight * num) / ten) * ten}</td>
+                <td>{Math.round((inclinePushName.weight * num) / ten)* ten}</td>
                 <td>3</td>
                 <td>12 - 20</td>
                 <td>3</td>
-                <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td>
+                {/* <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td> */}
               </tr>
-
-      {/* <td key={index} ref={inclinePushName.exercise} value={inclinePushName.exercise} >{inclinePushName.exercise}</td>
-      <td key={index} ref={inclinePushName.weight} value={inclinePushName.weight} >{inclinePushName.weight}</td> */}
-      </>         
+            </>         
       });
+
+    //A failed attemp to embed a array iteration inside of another
+    // let inclinePushArray = this.state.inclinePush.map((inclinePushName, index) => {
+
+    //   return <> 
+    //             <tr key={index} data-inclinepush-exercise = {inclinePushName.exercise} data-inclinepush-weight={inclinePushName.weight}>
+    //               <td>{inclinePushName.exercise}</td>
+    //               <td>{Math.round((inclinePushName.weight * num) / ten) * ten}</td>
+    //               <td>3</td>
+    //               <td>12 - 20</td>
+    //               <td>3</td>
+    //               <td>
+    //               {this.state.inclinePushVideo.lastIndexof((item, ) => {
+    //                 return (
+    //                 <td key = {inclinePushVideoName} data-inclinepush-video = {inclinePushVideoName.link}><a href={inclinePushVideoName.link}>{inclinePushName.exercise}</a></td>
+    //                 );
+    //               })};
+    //               </td>
+    //             </tr>
+    //         </>
+    // });
 
     let chestIsolationArray = this.state.chestIsolation.map((chestIsolationName, index) => {
 
@@ -91,11 +114,8 @@ class ListDayOne extends Component {
                 <td>3</td>
                 <td>12 - 20</td>
                 <td>3</td>
-                <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td>
+                {/* <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td> */}
               </tr>
-
-      {/* <td key={index} ref={chestIsolationName.exercise} value={chestIsolationName.exercise} >{chestIsolationName.exercise}</td>
-      <td key={index} ref={chestIsolationName.weight} value={chestIsolationName.weight} >{chestIsolationName.weight}</td> */}
             </>         
       });
 
@@ -109,12 +129,9 @@ class ListDayOne extends Component {
                 <td>3</td>
                 <td>12 - 20</td>
                 <td>3</td>
-                <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td>
+                {/* <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td> */}
               </tr>
-
-      {/* <td key={index} ref={horizontalPushName.exercise} value={horizontalPushName.exercise} >{horizontalPushName.exercise}</td>
-      <td key={index} ref={horizontalPushName.weight} value={horizontalPushName.weight} >{horizontalPushName.weight}</td> */}
-      </>         
+            </>         
       });
 
     let rearOrSideDeltsArray = this.state.rearOrSideDelts.map((rearOrSideDeltsName, index) => {
@@ -127,12 +144,9 @@ class ListDayOne extends Component {
                 <td>3</td>
                 <td>12 - 20</td>
                 <td>3</td>
-                <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td>
+                {/* <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td> */}
               </tr>
-
-      {/* <td key={index} ref={rearOrSideDeltsName.exercise} value={rearOrSideDeltsName.exercise} >{rearOrSideDeltsName.exercise}</td>
-      <td key={index} ref={rearOrSideDeltsName.weight} value={rearOrSideDeltsName.weight} >{rearOrSideDeltsName.weight}</td> */}
-      </>         
+            </>         
       });
 
     let horizontalPullArray = this.state.horizontalPull.map((horizontalPullName, index) => {
@@ -145,34 +159,19 @@ class ListDayOne extends Component {
                 <td>3</td>
                 <td>12 - 20</td>
                 <td>3</td>
-                <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td>
+                {/* <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td> */}
               </tr>
-
-      {/* <td key={index} ref={horizontalPullName.exercise} value={horizontalPullName.exercise} >{horizontalPullName.exercise}</td>
-      <td key={index} ref={horizontalPullName.weight} value={horizontalPullName.weight} >{horizontalPullName.weight}</td> */}
-      </>         
+            </>         
       });
 
     return (
       <>
-      {/* <div className="Container">
-          <div className="row justify-content-center">
-            <div className="mr-1">{this.props.inputWeight1} lbs</div>
-            <div className="mr-1"> {this.props.inclinePushMove}</div>
-            <p>3 Sets  12 - 20 Rep Range</p>
-          </div>
-          <div className="row justify-content-center">
-            <div className="mr-1">{this.props.inputWeight2} lbs</div>
-            <div className="mr-1"> {this.props.chestIsolationMove}</div>
-            <p>3 Sets  12 - 20 Rep Range</p>
-          </div>
-      </div> */}
         {/* <!-- Begin Page Content --> */}
         <div className="container-fluid">
 
           {/* <!-- Page Heading --> */}
           <h1 className="h3 mb-2 text-gray-800">Week 1</h1>
-          <p className="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation.</p>
+          <p className="mb-4">Rest 1-1/2 minutes to 2-1/2 minutes between sets. </p>
 
           {/* <!-- DataTales Example --> */}
           <div className="card shadow mb-4">
@@ -189,61 +188,31 @@ class ListDayOne extends Component {
                       <th># of Sets</th>
                       <th>Rep Range</th>
                       <th>Reps Left Until Fail</th>
-                      <th>How To Video</th>
+                      {/* <th>How To Video</th> */}
                     </tr>
                   </thead>
-                  <tfoot>
+                  {/* <tfoot>
                     <tr>
                     <th>Exercise</th>
                       <th>Weight lbs</th>
                       <th># of Sets</th>
                       <th>Rep Range</th>
                       <th>Reps Left Until Fail</th>
-                      <th>How To Video</th>
+                      <th>How To Video</th> 
                     </tr>
-                  </tfoot>
+                  </tfoot> */}
                   <tbody className="text-center">
-                    {/* <tr> */}
+
                       {inclinePushArray}
-                      {/* <td>3</td>
-                      <td>12 - 20</td>
-                      <td>3</td>
-                      <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td>
-                    </tr> */}
-                    {/* <tr> */}
+
                       {chestIsolationArray} 
-                      {/* <td>3</td>
-                      <td>12 - 20</td>
-                      <td>3</td>
-                      <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td>
-                    </tr> */}
-                    {/* <tr> */}
+
                       {horizontalPushArray} 
-                      {/* <td>Incline Wide Grip Bench Press</td>
-                      <td>130</td>
-                      <td>3</td>
-                      <td>12 - 20</td>
-                      <td>3</td>
-                      <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td>
-                    </tr> */}
-                    {/* <tr> */}
+
                       {rearOrSideDeltsArray}
-                      {/* <td>Incline Wide Grip Bench Press</td>
-                      <td>130</td>
-                      <td>3</td>
-                      <td>12 - 20</td>
-                      <td>3</td>
-                      <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td>
-                    </tr> */}
-                    {/* <tr> */}
+
                       {horizontalPullArray}
-                      {/* <td>Incline Wide Grip Bench Press</td>
-                      <td>130</td>
-                      <td>3</td>
-                      <td>12 - 20</td>
-                      <td>3</td>
-                      <td><a href={'https://youtu.be/MDuOnEyof1w'}>Incline Wide Grip Bench Press</a></td>
-                    </tr> */}
+
                   </tbody>
                 </table>
               </div>
