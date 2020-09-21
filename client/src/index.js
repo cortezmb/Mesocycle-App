@@ -7,15 +7,12 @@ import Homepage from './components/Homepage';
 import Videos from './components/Videos';
 import ListDayOne from './components/ListDayOne';
 import CreateDayOne from './components/CreateDayOne';
-import CreateDayOneRepMaxInput from './components/CreateDayOneRepMaxInput';
+// import CreateDayOneRepMaxInput from './components/CreateDayOneRepMaxInput';
 import Login from './components/Login';
 import Registration from './components/Registration';
 import reducer from "./reducers/reducer";
-import BaseLayout from './components/layout/BaseLayout'
+import BaseLayout2 from './components/layout/BaseLayout2'
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import RepCounter from './components/RepCounter';
-
-// import Statistics from './components/Statistics';
 
 
 //this createStore function will create the store in Redux in order to have a global state to put things in
@@ -27,7 +24,7 @@ ReactDOM.render(
   //the Provider provides access to the global state in Redux to the React application. Any component will have access to global state
   <Provider store={store}>
     <BrowserRouter>
-    <BaseLayout>
+    <BaseLayout2>
     <Switch>
 
         {/* This view is the Homepage */}
@@ -45,7 +42,7 @@ ReactDOM.render(
         <Route path='/Registration' component={Registration}/> 
 
         {/* This view has the movement descriptions and 10RM input forms */}
-        <Route path='/CreateDayOneRepMaxInput' component={CreateDayOneRepMaxInput}/> 
+        {/* <Route path='/CreateDayOneRepMaxInput' component={CreateDayOneRepMaxInput}/>  */}
 
         {/* This view has the workout of the day with rep counter
         <Route path='/RepCount' component={RepCounter}/> */}
@@ -54,7 +51,7 @@ ReactDOM.render(
         {/* <Route path='/Stats' component={Statistics}/> */}
 
       </Switch>
-    </BaseLayout>
+    </BaseLayout2>
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

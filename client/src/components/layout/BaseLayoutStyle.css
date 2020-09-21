@@ -4,9 +4,9 @@ body {
   }
 
 .headerImage {
-    background: url('../images/MESOCYCLE LOGO_black_bcg.png');
-    width: 25em;
-    background-size: cover;
+    background: url('../images/MESOCYCLE LOGO_white_bcg.png');
+    width: 12%; 
+    background-size: cover; 
     background-position: center center;
 
 }
@@ -16,9 +16,9 @@ body {
     background-color: black;
   }
 
-.mainBody {
+/* .mainBody {
     height: 60vh;
-}
+} */
 
 label{
     color: #ee2d37;
@@ -28,8 +28,8 @@ label{
 }
 
 .navBG{
-    background: #ee2d37;
-    height: 10vh;
+    background: white;
+    height: 20vh;
 }
 
 .iconColor {
@@ -11321,7 +11321,7 @@ label{
   }
   
   footer.sticky-footer .copyright {
-    line-height: 1;
+    line-height: 10;
     font-size: 0.8rem;
   }
   

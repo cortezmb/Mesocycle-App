@@ -1,4 +1,4 @@
-
+//Exercise Action
 export const chooseInclinePush = (exercise) => {
 
     return {
@@ -39,6 +39,7 @@ export const chooseHorizontalPull = (exercise) => {
     }
 }
 
+//10 Rep Max Weight Action
 export const increaseMaxInclinePush = (pounds) => {
 
     return {
@@ -62,3 +63,20 @@ export const increaseMaxHorizontalPush = (pounds) => {
         weight3: pounds
     }
 }
+
+export const increaseMaxSideOrRearDelts = (pounds) => {
+
+    return {
+        type: 'INCREASE_MAX_SIDE_OR_REAR_DELTS',
+        weight4: pounds
+    }
+}
+
+export const increaseMaxHorizontalPull = (pounds) => {
+
+    return {
+        type: 'INCREASE_MAX_HORIZONTAL_PULL',
+        weight5: pounds
+    }
+}
+

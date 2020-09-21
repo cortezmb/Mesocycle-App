@@ -5,6 +5,8 @@ const initialState = {
     weight1: 0,
     weight2: 0,
     weight3: 0,
+    weight4: 0,
+    weight5: 0,
 
     inclinePushMovement:
         {
@@ -43,6 +45,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 counter: state.counter - 1
             }
+
+        //Start reducer for 10 Rep Max Input
         case 'INCREASE_MAX_INCLINE_PUSH':
             return {
                 ...state,
@@ -58,7 +62,19 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 weight3: action.weight3.pounds
             }
-        case 'ADD_INCLINE_PUSH':
+        case 'INCREASE_MAX_SIDE_OR_REAR_DELTS':
+            return {
+                ...state,
+                weight4: action.weight4.pounds
+            }
+        case 'INCREASE_MAX_HORIZONTAL_PULL':
+            return {
+                ...state,
+                weight5: action.weight5.pounds
+            }
+       
+       //Start reducer for exercises
+            case 'ADD_INCLINE_PUSH':
             return {
                 ...state,
                 inclinePushMovement: action.movement

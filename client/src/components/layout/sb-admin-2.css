@@ -47,6 +47,14 @@
   box-sizing: border-box;
 }
 
+.headerImage {
+  background: url('../images/MESOCYCLE LOGO_white_bcg.png');
+  width: 25em;
+  background-size: cover;
+  background-position: center center;
+
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
