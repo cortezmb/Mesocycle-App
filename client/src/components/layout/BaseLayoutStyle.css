@@ -4,11 +4,17 @@ body {
   }
 
 .headerImage {
-    background: url('../images/MESOCYCLE LOGO_black_bcg.png');
-    width: 25em;
-    background-size: cover;
+    background: url('../images/MESOCYCLE LOGO_white_bcg.png');
+    width: 12%; 
+    background-size: cover; 
     background-position: center center;
 
+}
+
+.registerImage {
+  background: url("../images/register_image.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .header{
@@ -16,9 +22,9 @@ body {
     background-color: black;
   }
 
-.mainBody {
+/* .mainBody {
     height: 60vh;
-}
+} */
 
 label{
     color: #ee2d37;
@@ -28,8 +34,8 @@ label{
 }
 
 .navBG{
-    background: #ee2d37;
-    height: 10vh;
+    background: white;
+    height: 20vh;
 }
 
 .iconColor {
@@ -54,7 +60,7 @@ label{
 }
 
 .submit {
-    padding: 8px 12px;
+    padding: 4px 6px;
     color: black;
     /* background-color: lightgray; */
     border: 1px solid darkgray;
@@ -71,9 +77,8 @@ label{
     background-color: #ee2d37;
     color: #FFFFFF;
     border: 1px solid #ee2d37;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-size: 2vh;
+    padding: 2px 4px;
+    border-radius: 4px;
 }
 
 .inputForm {
@@ -105,6 +110,23 @@ label{
     font-family: 'Amatic SC';
 }
 
+.bg-login-image {
+  background: url("../images/register_image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-register-image {
+  background: url("../images/register_image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-password-image {
+  background: url("../images/register_image.jpg");
+  background-position: center;
+  background-size: cover;
+}
 /*!
  * Start Bootstrap - SB Admin 2 v4.1.1 (https://startbootstrap.com/themes/sb-admin-2)
  * Copyright 2013-2020 Start Bootstrap
@@ -11321,7 +11343,7 @@ label{
   }
   
   footer.sticky-footer .copyright {
-    line-height: 1;
+    line-height: 10;
     font-size: 0.8rem;
   }
   

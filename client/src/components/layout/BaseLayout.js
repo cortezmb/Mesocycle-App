@@ -25,7 +25,7 @@ const BaseLayout = (props) => {
                 <nav className="navbar navbar-light navBG font font-weight-bolder d-flex justify-content-between">       
                     
                     <div><Link className="font text-white" to="/">Home</Link></div>
-                    <div><Link className="font text-white" to="/DayOne">Build Workout</Link></div>
+                    <div><Link className="font text-white" to="/CreateDayOne">Build Workout</Link></div>
                     <div><Link className="font text-white" to="/Workout">Workout of the Day</Link></div>
                     <div><Link className="font text-white" to="/Video">How To Video</Link></div>
                 </nav>

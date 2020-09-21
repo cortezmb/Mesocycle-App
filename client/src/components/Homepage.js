@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import'./layout/BaseLayoutStyle.css';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class Homepage extends Component {
   render() {
@@ -21,9 +21,9 @@ class Homepage extends Component {
 
             Don’t go and start maxing out just yet big guy, just give us a conservative guestimate. You can adjust it later.</p>
         </div>
-        <div className="font m-3 d-flex justify-content-center">
-            <Link to="/DayOne" className="continueButton">Continue</Link>      
-        </div>
+        {/* <div className="font m-3 d-flex justify-content-center">
+            <Link to="/CreateDayOne" className="continueButton">Continue</Link>      
+        </div> */}
       </>
     )
   }

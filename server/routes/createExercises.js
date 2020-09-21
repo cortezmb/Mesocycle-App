@@ -48,6 +48,7 @@ router.get('/createExercises/:id', async (req, res) => {
         let user_id = req.params.id
 
         let inclinePushResults = await db.data.findAll({
+            
             limit: 1,
             where: {
                 user_id: user_id,
@@ -57,7 +58,8 @@ router.get('/createExercises/:id', async (req, res) => {
         })
 
         let chestIsolationResults =  await db.data.findAll({
-               
+            
+            limit: 1,
             where: {
                 user_id: user_id,       
                 category_id: 5
@@ -65,32 +67,35 @@ router.get('/createExercises/:id', async (req, res) => {
             order:[['createdAt', 'DESC']],
         })
 
-        let horizontalPushResults =  await db.data.findAll(
-                {
-                    where: {
-                        user_id: user_id,
-                        category_id: 11
-                    },
-                    order:[['createdAt', 'DESC']],
-                })
+        let horizontalPushResults =  await db.data.findAll({
+            
+            limit: 1,
+            where: {
+                user_id: user_id,
+                category_id: 11
+            },
+            order:[['createdAt', 'DESC']],
+        })
 
-        let rearOrSideDeltsResults =  await db.data.findAll(
-                {
-                    where: {
-                        user_id: user_id,
-                        category_id: 17
-                    },
-                    order:[['createdAt', 'DESC']],
-                })
+        let rearOrSideDeltsResults =  await db.data.findAll({
+            
+            limit: 1,     
+            where: {
+                user_id: user_id,
+                category_id: 17
+            },
+            order:[['createdAt', 'DESC']],
+        })
 
-        let horizontalPullResults =  await db.data.findAll(
-                {
-                    where: {
-                        user_id: user_id,
-                        category_id: 10
-                    },
-                    order:[['createdAt', 'DESC']],
-                })
+        let horizontalPullResults =  await db.data.findAll({
+            
+            limit: 1,
+            where: {
+                user_id: user_id,
+                category_id: 10
+            },
+            order:[['createdAt', 'DESC']],
+        })
         
                 res.json(
                         {
